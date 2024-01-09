@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      console.clear();
+
+      // Question 1:
+      // Write a program to search if a number exists in an array. If the number exists then return the position. If it exists multiple time then return an array with all the positions. If the number doesn't exist then return -1;
+      // For example,
+      // Input: [1, 2, 3, 4, 5, 1, 3] and Search Elem: 4
+      // Output: 3
+      // Input: [1, 2, 3, 4, 5, 1, 3] and Search Elem: 1
+      // Output: [0, 5]
+      // Input: [1, 2, 3, 4, 5, 1, 3] and Search Elem: 7
+      // Output: -1
+
+      console.log("Answer 1 -----------------------------------");
+      function searchNumber(arr, searchElem) {
+        var positions = [];
+
+        for (var i = 0; i < arr.length; i++) {
+          if (arr[i] === searchElem) {
+            positions.push(i);
+          }
+        }
+
+        if (positions.length === 0) {
+          return -1;
+        } else if (positions.length === 1) {
+          return positions[0];
+        } else {
+          return positions;
+        }
+      }
+      var array = [1, 2, 3, 4, 5, 1, 3];
+      var searchElement = 4;
+      var result = searchNumber(array, searchElement);
+      console.log(result);
+      var searchElement = 1;
+      var result = searchNumber(array, searchElement);
+      console.log(result);
+      var searchElement = 7;
+      var result = searchNumber(array, searchElement);
+      console.log(result);
+
+      // Question 2:
+      // Write a program to print following pattern in the console.
+      // 54321
+      // 5432
+      // 543
+      // 54
+      // 5
+        console.log("Answer 2 -----------------------------------");
+
+        function pattern_1(value) {
+          for (var i = 0; i < value; i++) {
+            var temp = "";
+            for (var j = value; j > i; j--) {
+              temp = temp + j;
+            }
+            console.log(temp);
+          }
+        }
+        pattern_1(5);
+
+      // Question 3:
+      // Write a JavaScript program to sort an array in ascending order
+      // For example,
+      // Input: [3, 2, 1, 4, 5, 45]
+      // Output: [1, 2, 3, 4, 5, 45]
+        console.log("Answer 3 -----------------------------------");
+
+        function sort_asscending(array) {
+          array.sort(function (a, b) {
+            return a - b;
+          });
+          return array;
+        }
+
+        console.log(sort_asscending([3, 2, 1, 4, 5, 45]));
+
+      // Question 4:
+      // Write a JavaScript program to check if two strings are anagrams. Anagram string are such two strings which can be rearranged to create one another.
+      // For example,
+      // Input: LISTEN and SILENT
+      // Output: True
+      // Input: HELLO and JELLO
+      // Output: False
+
+        console.log("Answer 4 -----------------------------------");
+
+        function anagram(str_1, str_2) {
+          if (str_1.length == str_2.length) {
+            for (var i = 0; i < anagram.length; i++) {
+              if (!str_2.includes(str_1[i])) return false;
+            }
+
+            return true;
+          }
+          return false;
+        }
+        if (anagram("HELLO", "JELLO")) console.log("True");
+        else console.log("False");
+
+      // Question 5:
+      // Write a JavaScript program to reverse a string without using inbuilt methods.
+      // For example,
+      // Input: Hello
+      // Output: olleH
+
+        console.log("Answer 5 -----------------------------------");
+
+        function reverse_string(str) {
+          var temp = "";
+          for (var i = str.length - 1; i >= 0; i--) {
+            temp = temp + str[i];
+          }
+
+          return temp;
+        }
+
+        console.log(reverse_string("Hello"));
+    </script>
+  </head>
+  <body></body>
+</html>
